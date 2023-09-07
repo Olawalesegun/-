@@ -25,8 +25,8 @@ public class InternShip {
         this.current_day = dayOfWeek;
         this.utc_time = dateTimeAsRequested;
         this.track = track;
-        this.github_file_url = "https://github.com/Olawalesegun/HandsOnSpring/blob/main/src/main/resources/application.yml";
-        this.github_repo_url = "https://github.com/Olawalesegun/HandsOnSpring";
+        this.github_file_url = "https://github.com/Olawalesegun/-/blob/main/src/main/java/com/example/hnginternship/HngInternshipApplication.java";
+        this.github_repo_url = "https://github.com/Olawalesegun/-";
         this.status_code = status_code;
     }
 
