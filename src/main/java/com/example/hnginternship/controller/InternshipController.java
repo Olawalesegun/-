@@ -14,9 +14,9 @@ public class InternshipController {
 
 
     //@RequestParam(name="slack_name", value="example_name")
-    @GetMapping("/")
-    public InternShip getInternshipDetails(@RequestParam(name="slack_name", defaultValue = "example_name") String slack_name,
-                                           @RequestParam(name = "track", defaultValue = "backend") String track){
+    @GetMapping("/api")
+    public InternShip getInternshipDetails(@RequestParam String slack_name,
+                                           @RequestParam String track){
         return new InternShip(slack_name, track, HttpStatus.OK.value());
     }
 }
