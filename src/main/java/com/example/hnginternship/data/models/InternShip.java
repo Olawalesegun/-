@@ -8,7 +8,7 @@ import java.util.Objects;
 public class InternShip {
 
     private String slack_name;
-    private DayOfWeek current_day;
+    private String current_day;
     private String utc_time;
     private String track;
     private String github_file_url;
@@ -16,13 +16,16 @@ public class InternShip {
     private int status_code;
     LocalDateTime today = LocalDateTime.now();
     DayOfWeek dayOfWeek = today.getDayOfWeek();
+    String capitalizedDayOfWeek = dayOfWeek.toString().substring(0, 1).toUpperCase() +
+            dayOfWeek.toString().substring(1).toLowerCase();
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
     String dateTimeAsRequested = today.format(dateTimeFormatter);
 
 
+
     public InternShip(String slack_name, String track, int status_code) {
         this.slack_name = slack_name;
-        this.current_day = dayOfWeek;
+        this.current_day = capitalizedDayOfWeek;
         this.utc_time = dateTimeAsRequested;
         this.track = track;
         this.github_file_url = "https://github.com/Olawalesegun/-/blob/main/src/main/java/com/example/hnginternship/HngInternshipApplication.java";
@@ -38,11 +41,11 @@ public class InternShip {
         this.slack_name = slack_name;
     }
 
-    public DayOfWeek getCurrent_day() {
+    public String getCurrent_day() {
         return current_day;
     }
 
-    public void setCurrent_day(DayOfWeek current_day) {
+    public void setCurrent_day(String current_day) {
         this.current_day = current_day;
     }
 
